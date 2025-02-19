@@ -15,6 +15,7 @@ module.exports = {
     static: path.resolve(__dirname, "dist"),
     port: 3000,
     hot: true,
+    watchFiles: ['./src/**/*']
   },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
   module: {
