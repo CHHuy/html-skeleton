@@ -6,18 +6,34 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/js/main.js",
+  entry: {
+    homePage: ["./src/js/main.js", "./src/js/home/index.js"],
+    categoryPage: ["./src/js/main.js", "./src/js/category/index.js"],
+  },
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
     port: 3000,
     hot: true,
-    watchFiles: ['./src/**/*']
+    watchFiles: ["./src/**/*"],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Trang chủ",
+      filename: "index.html",
+      template: "./src/index.html",
+      chunks: ["homePage"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "Category",
+      filename: "category.html",
+      template: "./src/category.html",
+      chunks: ["categoryPage"],
+    }),
+  ],
   module: {
     rules: [
       {

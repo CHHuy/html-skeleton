@@ -89,10 +89,12 @@ $fa-font-path: '../../third_party/node_modules/@fortawesome/fontawesome-free/web
 @import '../../third_party/node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @import '../../third_party/node_modules/@fortawesome/fontawesome-free/scss/solid';
 @import '../../third_party/node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import '../../third_party/swiper/swiper-bundle.min.css';
 
 //
 // Custom styles
 //
+@import './home';
 
 
 body {
